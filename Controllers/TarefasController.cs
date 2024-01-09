@@ -20,14 +20,14 @@ namespace API_Tarefas.Controllers
 
         private ITarefaServices _service;
 
-        [HttpGet]
+        [HttpGet("/listartarefas")]
         public IActionResult Index()
         {
             var tarefas = _service.List();
             return StatusCode(200, tarefas);
         }
 
-        [HttpPost]
+        [HttpPost("/criartarefa")]
         public IActionResult Create([FromBody] TarefaDto tarefaDto)
         {
             try
@@ -40,7 +40,7 @@ namespace API_Tarefas.Controllers
             }
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("/atualizartarefa{id}")]
         public IActionResult Update([FromRoute]int id, [FromBody] TarefaDto tarefaDto)
         {
             try 
@@ -55,7 +55,7 @@ namespace API_Tarefas.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("/exibirtarefaporid{id}")]
         public IActionResult Show([FromRoute] int id)
         {
             try
@@ -68,7 +68,7 @@ namespace API_Tarefas.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("/deletartarefa{id}")]
         public IActionResult Delete([FromRoute] int id)
         {
             try
