@@ -3,29 +3,49 @@ Esta é uma API RESTful desenvolvida em C# utilizando o framework .NET e o banco
 
 ## Endpoints
 ### [GET] Listar Tarefas
+
 Descrição: Retorna todas as tarefas do usuário em formato JSON.
+
 Endpoint: /listartarefas
+
 Parâmetros: Nenhum
+
 ### [GET] Buscar por ID
 Descrição: Retorna uma tarefa específica do usuário pelo seu ID em formato JSON.
+
 Endpoint: /exibirtarefaporid
-Parâmetros:
+
+Parâmetros: ID
+
 id (path): ID único da tarefa a ser buscada.
+
 ### [POST] Cadastrar Tarefa
 Descrição: Recebe os dados de uma nova tarefa do usuário em formato JSON e a insere no banco de dados.
+
 Endpoint: /criartarefa
-Parâmetros:
+
+Parâmetros: Nenhum
+
 Corpo da requisição deve conter os dados da tarefa em formato JSON.
+
 ### [PUT] Atualizar Tarefa por ID
 Descrição: Recebe os dados atualizados de uma tarefa do usuário pelo seu ID em formato JSON e os atualiza no banco de dados.
+
 Endpoint: /atualizartarefa
-Parâmetros:
+
+Parâmetros: ID
+
 id (path): ID único da tarefa a ser atualizada.
+
 Corpo da requisição deve conter os dados atualizados da tarefa em formato JSON.
+
 ### [DELETE] Deletar Tarefa por ID
 Descrição: Recebe o ID de uma tarefa do usuário e a exclui do banco de dados.
+
 Endpoint: /deletartarefa
-Parâmetros:
+
+Parâmetros: ID
+
 id (path): ID único da tarefa a ser deletada.
 
 ## Estrutura Json
