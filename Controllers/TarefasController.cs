@@ -4,6 +4,7 @@ using API_Tarefas.Models;
 using API_Tarefas.Models.Error;
 using API_Tarefas.ModelViews;
 using API_Tarefas.Services;
+using API_Tarefas.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Tarefas.Controllers
@@ -12,12 +13,12 @@ namespace API_Tarefas.Controllers
     [Route("/tarefas")]
     public class TarefasController : ControllerBase
     {
-        public TarefasController(TarefaServices service) 
+        public TarefasController(ITarefaServices service) 
         {
             _service = service;
         }
 
-        private TarefaServices _service;
+        private ITarefaServices _service;
 
         [HttpGet]
         public IActionResult Index()

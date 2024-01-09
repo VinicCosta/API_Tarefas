@@ -1,5 +1,6 @@
 using API_Tarefas.Database;
 using API_Tarefas.Services;
+using API_Tarefas.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ builder.Services.AddDbContext<TarefasContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
     );
 
-builder.Services.AddScoped<TarefaServices>();
+builder.Services.AddScoped<ITarefaServices, TarefaServices>();
 
 // Add services to the container.
 

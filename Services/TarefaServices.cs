@@ -2,10 +2,11 @@
 using API_Tarefas.DTO;
 using API_Tarefas.Models;
 using API_Tarefas.Models.Error;
+using API_Tarefas.Services.Interfaces;
 
 namespace API_Tarefas.Services
 {
-    public class TarefaServices
+    public class TarefaServices : ITarefaServices
     {
        public TarefaServices(TarefasContext db) 
         {
